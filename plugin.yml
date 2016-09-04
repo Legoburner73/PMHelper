@@ -1,1 +1,8 @@
-
+name: PMHelper
+main: Lego\PMHelper\Main
+version: "0.0.1"
+api: [1.9.0]
+load: STARTUP
+author: Lego
+description: Pocketminers server chat helper
+website: https://pocketminers.com
