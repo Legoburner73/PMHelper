@@ -18,6 +18,17 @@ class Main extends PluginBase implements Listener
   
   public function onChatCommand(PlayerCommandPreprocessEvent $event){
     $message = $event->getMessage();
-		$player = $event->getPlayer();
+    $player = $event->getPlayer();
+    if(message{0} != "/") {
+    	if(message{0} != "RP:") {
+    		$needhelp = array("need", "help");
+    		$messagearray = str_split($message);
+    		for($i = 0; $i < count($messagearray); $i++){
+    			if(in_array($messagearray[$i], $needhelp)==true) {
+    				$player->sendMessage("Need help? Try using /help for a list of commands.");
+    			}
+    	}
+    }
   }
+}
 }
