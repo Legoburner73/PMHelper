@@ -22,9 +22,17 @@ class Main extends PluginBase implements Listener
     $player = $event->getPlayer();
     if(message{0} != "/") {
     	if(message{0} != "RP:") {
+    	  //English
     		$needhelp = array("need", "help");
-    		$emilyversion = array("version", "@emily");
+    		$emilyversion = array("version", "@emily"); // Works for French
     		$languages = array("languages", "speak", "@emily");
+    		//French
+    		$frenchhelp = array("Besoin", "d'aide");
+    		$frenchlangs = array("langues", "parlent", "@emily");
+    		//Spanish
+    		$spanishhelp = array("necesitas", "ayuda");
+    		$spanishvers = array("versión", "@emily");
+    		$spanishlangs = array("idiomas", "hablan", "@emily")
     		$messagearray = str_split($message);
     		for($i = 0; $i < count($messagearray); $i++){
     			if(in_array($messagearray[$i], $needhelp)==true) {
