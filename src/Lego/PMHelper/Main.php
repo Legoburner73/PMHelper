@@ -10,11 +10,12 @@ use pocketmine\event\player\PlayerCommandPreprocessEvent;
 
 class Main extends PluginBase implements Listener
 {
-  private PREFIX = "§a[§2MVP+§a]§2 Emily §7>";
+  private PREFIX = "§a[§9MOD§a][§fF:§a]§9 Emily§f>";
   private VERSION = "0.0.1"
+  private KICKREASON = Colour::RED . "PMHelper" . Colour::WHITE . " >> You have been kicked for swearing.\n" . Colour::GREEN . "PMHelper by Lego";
   public function onEnable(){
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    $this->getLogger()->info(Colour::YELLOW . " has joined the game.");
+    $this->getLogger()->info(Colour::YELLOW . "Emily has joined the game.");
   }
   
   public function onChatCommand(PlayerCommandPreprocessEvent $event){
@@ -37,7 +38,7 @@ class Main extends PluginBase implements Listener
     		for($i = 0; $i < count($messagearray); $i++){
     			if(in_array($messagearray[$i], $needhelp)==true) {
     				$this->getServer()->broadcastMessage($this->PREFIX . "Need help? Try using /help for a list of commands.");
-    			}elseif(in_array($messagearray[$1], $emilyversion)==true) {
+    			}elseif(in_array($messagearray[$i], $emilyversion)==true) {
     			  $this->getServer()->broadcastMessage($this->PREFIX . "My current version is: " . Colour::RED . $this->VERSION);
     			}elseif(in_array($messagearray[$i], $languages)==true) {
     			  $this->getServer()->broadcastMessage($this->PREFIX . "I can speak the following languages: English, French, Spanish and Potuguese.");
@@ -45,5 +46,8 @@ class Main extends PluginBase implements Listener
     	}
     }
   }
+}
+public function onDisable() {
+  $this->getLogger()->info(Colour::YELLOW . "Emily has left the game.");
 }
 }
