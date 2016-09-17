@@ -27,6 +27,7 @@ class Main extends PluginBase implements Listener
     		$needhelp = array("need", "help");
     		$emilyversion = array("version", "@emily"); // Works for French
     		$languages = array("languages", "speak", "@emily");
+    		$plots = array("how", "get", "plot?");
     		//French
     		$frenchhelp = array("Besoin", "d'aide");
     		$frenchlangs = array("langues", "parlent", "@emily");
@@ -42,6 +43,8 @@ class Main extends PluginBase implements Listener
     			  $this->getServer()->broadcastMessage($this->PREFIX . "My current version is: " . Colour::RED . $this->VERSION);
     			}elseif(in_array($messagearray[$i], $languages)==true) {
     			  $this->getServer()->broadcastMessage($this->PREFIX . "I can speak the following languages: English, French, Spanish and Potuguese.");
+    			}elseif(in_array($messagearray[$i], $plots)==true) {
+    			  $this->getServer()->broadcastMessage($this->PREFIX . "To get a plot, use /p auto then /p claim.");
     			}
     	}
     }
